@@ -406,22 +406,6 @@ CGL_glCompressedTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint y
                               data);
 }
 
-static void
-CGL_glTexImage2D(GLenum target, GLint level, GLenum internalformat, GLsizei width,
-                           GLsizei height, GLint border, GLenum format, GLenum type,
-                           const void *data) {
-    glTexImage2D(target, level, internalformat, width, height, border, format, type, data);
-}
-
-static void
-CGL_glTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset,
-                              GLsizei width,
-                              GLsizei height, GLenum format, GLenum type, const void *data) {
-    glTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type,
-                              data);
-}
-
-
 static const VTBL(IGL) gsCGLFuncs = {
         CGL_AddRef,
         CGL_Release,
@@ -497,9 +481,9 @@ static const VTBL(IGL) gsCGLFuncs = {
         glTexCoordPointer,
         glTexEnvx,
         glTexEnvxv,
-        CGL_glTexImage2D,
+        glTexImage2D,
         glTexParameterx,
-        CGL_glTexSubImage2D,
+        glTexSubImage2D,
         glTranslatex,
         glVertexPointer,
         glViewport
@@ -545,8 +529,6 @@ static struct breEGLProcAddressMapEntry g_eglProcAddressMap[] = {
         {"glGetString",               (void (*)()) CGL_glGetString},
         {"glCompressedTexImage2D",    (void (*)()) CGL_glCompressedTexImage2D},
         {"glCompressedTexSubImage2D", (void (*)()) CGL_glCompressedTexSubImage2D},
-        {"glTexImage2D",              (void (*)()) CGL_glTexImage2D},
-        {"glTexSubImage2D",           (void (*)()) CGL_glTexSubImage2D},
         {NULL, NULL}
 };
 
