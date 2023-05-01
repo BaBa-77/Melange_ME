@@ -269,33 +269,6 @@ void (*CEGL_eglGetProcAddress(const char *procname))() {
 
         entry++;
     }
-    if (strcmp(procname, "eglGetProcAddress") == 0) {
-        return (void (*)()) CEGL_eglGetProcAddress;
-    } else if (strcmp(procname, "eglGetDisplay") == 0) {
-        return (void (*)()) CEGL_eglGetDisplay;
-    } else if (strcmp(procname, "eglInitialize") == 0) {
-        return (void (*)()) CEGL_eglInitialize;
-    } else if (strcmp(procname, "eglTerminate") == 0) {
-        return (void (*)()) CEGL_eglTerminate;
-    } else if (strcmp(procname, "eglCreateWindowSurface") == 0) {
-        return (void (*)()) CEGL_eglCreateWindowSurface;
-    } else if (strcmp(procname, "eglCreatePixmapSurface") == 0) {
-        return (void (*)()) CEGL_eglCreatePixmapSurface;
-    } else if (strcmp(procname, "eglCreatePbufferSurface") == 0) {
-        return (void (*)()) CEGL_eglCreatePbufferSurface;
-    } else if (strcmp(procname, "eglDestroySurface") == 0) {
-        return (void (*)()) CEGL_eglDestroySurface;
-    } else if (strcmp(procname, "eglQuerySurface") == 0) {
-        return (void (*)()) CEGL_eglQuerySurface;
-    } else if (strcmp(procname, "eglMakeCurrent") == 0) {
-        return (void (*)()) CEGL_eglMakeCurrent;
-    } else if (strcmp(procname, "eglGetCurrentSurface") == 0) {
-        return (void (*)()) CEGL_eglGetCurrentSurface;
-    } else if (strcmp(procname, "eglCopyBuffers") == 0) {
-        return (void (*)()) CEGL_eglCopyBuffers;
-    } else if (strcmp(procname, "eglSwapBuffers") == 0) {
-        return (void (*)()) CEGL_eglSwapBuffers;
-    }
     return eglGetProcAddress(procname);
 }
 
