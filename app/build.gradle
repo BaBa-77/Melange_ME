@@ -10,15 +10,14 @@ android {
         applicationId "io.github.usernameak.brewemulator"
         minSdkVersion 10
         targetSdkVersion 22
-        versionCode 100103
-        versionName "1.0.10.3"
+        versionCode 100110
+        versionName "1.0.11.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
                 cppFlags "-std=c++11"
                 version "3.18.1"
-                targets "brewemu"
             }
         }
 
@@ -43,9 +42,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    ndkVersion "22.0.7026061"
-    namespace 'io.github.usernameak.brewemulator'
-    lint {
+    ndkVersion "25.1.8937393"
+    lintOptions {
         checkReleaseBuilds false
     }
 }

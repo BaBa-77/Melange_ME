@@ -106,6 +106,10 @@ add_library(brewemu SHARED
         bre/ARMLegacyABI.S
         bre/OEMAddrBook.c
         bre/OEMMediaCMidi.cpp
+        bre/OEMAnnunciatorControl.c
+
+        bregl/AEEGL.h
+        bregl/bregl.c
 
         bre2/breConfig.c
         bre2/breConfig.h

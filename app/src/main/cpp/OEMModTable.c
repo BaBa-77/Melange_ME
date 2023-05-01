@@ -757,6 +757,8 @@ extern const AEEStaticClass gascSignalClassList[];
 extern const AEEStaticClass **AEESIM_GetStaticClassLists(void);
 #endif /* #if defined(AEE_SIMULATOR) */
 
+extern const AEEStaticClass gAEEGLClasses[];
+
 /*==================================================================
    Returns pointer to lists of static class entries.
 ==================================================================*/
@@ -1119,6 +1121,9 @@ const AEEStaticClass ***OEMMod_GetStaticClassLists(void)
 
       gAEESysClockClasses,
       gAEESecSysClockClasses,
+
+      gAEEGLClasses,
+
       NULL
    };
 

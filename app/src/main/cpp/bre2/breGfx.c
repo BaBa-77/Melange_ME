@@ -59,6 +59,8 @@ void breGfxAcqCx() {
 
 void breGfxRelCx() {
     eglMakeCurrent(gEglDpy, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_SURFACE);
+    extern void CEGL_restoreContext();
+    CEGL_restoreContext();
 }
 
 void breGfxSwap() {
@@ -81,26 +83,31 @@ int breGfxIsInitialized() {
 int breOemDpyUpdate();
 
 JNIEXPORT void JNICALL
-Java_io_github_usernameak_brewemulator_EmulatorSurfaceView_nSurfaceCreated(JNIEnv *env, jobject thiz, jobject surface) {
-    if(!gEglCx) {
+Java_io_github_usernameak_brewemulator_EmulatorSurfaceView_nSurfaceCreated(JNIEnv *env,
+                                                                           jobject thiz,
+                                                                           jobject surface) {
+    if (!gEglCx) {
         breGfxInitDisplay();
     }
     ANativeWindow *nativeWindow = ANativeWindow_fromSurface(env, surface);
     breGfxInitSurface(nativeWindow);
     ANativeWindow_release(nativeWindow);
-    if(AEE_IsInitialized()) {
+    if (AEE_IsInitialized()) {
         breOemDpyUpdate();
     }
 }
 
 JNIEXPORT void JNICALL
-Java_io_github_usernameak_brewemulator_EmulatorSurfaceView_nSurfaceChanged(JNIEnv *env, jobject thiz) {
-    if(AEE_IsInitialized()) {
+Java_io_github_usernameak_brewemulator_EmulatorSurfaceView_nSurfaceChanged(JNIEnv *env,
+                                                                           jobject thiz) {
+    if (AEE_IsInitialized()) {
         breOemDpyUpdate();
     }
 }
 
 JNIEXPORT void JNICALL
-Java_io_github_usernameak_brewemulator_EmulatorSurfaceView_nSurfaceDestroyed(JNIEnv *env, jobject thiz, jobject surface) {
+Java_io_github_usernameak_brewemulator_EmulatorSurfaceView_nSurfaceDestroyed(JNIEnv *env,
+                                                                             jobject thiz,
+                                                                             jobject surface) {
     breGfxDestroySurface();
 }

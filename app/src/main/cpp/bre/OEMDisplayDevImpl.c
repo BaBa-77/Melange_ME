@@ -52,8 +52,11 @@ const AEEStaticClass gOEMDisplayDevClasses[] = {
         // {AEECLSID_DISPLAYDEV3,     ASCF_UPGRADE, PL_SYSTEM,  0, OEMDisplayDev_New},
         // {AEECLSID_DISPLAYDEV4,     ASCF_UPGRADE, PL_SYSTEM,  0, OEMDisplayDev_New},
         {AEECLSID_FONTSYSNORMAL,   ASCF_UPGRADE, 0,          0, OEMSysFont_New},
+        {AEECLSID_FONTSYSITALIC,   ASCF_UPGRADE, 0,          0, OEMSysFont_New},
         {AEECLSID_FONTSYSLARGE,    ASCF_UPGRADE, 0,          0, OEMSysFont_New},
         {AEECLSID_FONTSYSBOLD,     ASCF_UPGRADE, 0,          0, OEMSysFont_New},
+        {AEECLSID_FONTSYSBOLDITALIC,     ASCF_UPGRADE, 0,          0, OEMSysFont_New},
+        {AEECLSID_FONTSYSLARGEITALIC,     ASCF_UPGRADE, 0,          0, OEMSysFont_New},
         {0, 0, 0, 0, NULL}
 };
 
@@ -207,9 +210,15 @@ static int OEMSysFont_New(IShell * piShell, AEECLSID cls, void **ppif)
     switch (cls) {
         case AEECLSID_FONTSYSNORMAL:
             return ISHELL_CreateInstance(piShell, AEECLSID_FONT_BASIC11, (void **)ppif);
+        case AEECLSID_FONTSYSITALIC:
+            return ISHELL_CreateInstance(piShell, AEECLSID_FONT_BASIC11, (void **)ppif);
         case AEECLSID_FONTSYSBOLD:
             return ISHELL_CreateInstance(piShell, AEECLSID_FONT_BASIC11B, (void **)ppif);
         case AEECLSID_FONTSYSLARGE:
+            return ISHELL_CreateInstance(piShell, AEECLSID_FONT_BASIC14, (void **)ppif);
+        case AEECLSID_FONTSYSBOLDITALIC:
+            return ISHELL_CreateInstance(piShell, AEECLSID_FONT_BASIC14, (void **)ppif);
+        case AEECLSID_FONTSYSLARGEITALIC:
             return ISHELL_CreateInstance(piShell, AEECLSID_FONT_BASIC14, (void **)ppif);
         default:
             return ECLASSNOTSUPPORT;
