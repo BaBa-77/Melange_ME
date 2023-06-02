@@ -126,6 +126,11 @@ add_library(brewemu SHARED
         bre2/breScreenshot.c
         bre2/breScreenshot.h
 
+        brekddi/brekddi.c
+
+        brefont/brefont_jp.c
+        brefont/msx_kanji.h
+
         brewappmgr/BrewAppMgr.c
         brewappmgr/BrewAppMgr.h
         brewappmgr/BrewAppMgrUtils.c
@@ -193,13 +198,11 @@ add_library(brewemu SHARED
         OEMRegistry.c
         OEMResArbiter.c
         OEMRinger.c
-        OEMStockFonts.c
         OEMStringFuncs.c
         OEMText.c
         OEMTransform_generic.h
         OEMUSBHMSMIF_26108.c
         OEMUSBHMSMIF_26109.c
-        samplefont.bmp.h
 
         mmapi/MMPlayer.cpp
         mmapi/MMPlayer.h
@@ -236,7 +239,7 @@ target_link_libraries(brewemu
         aeesecurity
         aeersa
         aeeweb
-        #aeenet
+        aeenet
         aeecontrols
         aeemenu
         aeeijg

@@ -207,9 +207,13 @@ extern int OEMBitmapDevChild_New(IShell * piShell, AEECLSID cls, void **ppif)
 
 static int OEMSysFont_New(IShell * piShell, AEECLSID cls, void **ppif)
 {
+    typedef struct CFont CFont;
+    extern CFont gKanjiFont;
     switch (cls) {
         case AEECLSID_FONTSYSNORMAL:
-            return ISHELL_CreateInstance(piShell, AEECLSID_FONT_BASIC11, (void **)ppif);
+            *ppif = &gKanjiFont;
+            // return ISHELL_CreateInstance(piShell, AEECLSID_FONT_BASIC11, (void **)ppif);
+            return SUCCESS;
         case AEECLSID_FONTSYSITALIC:
             return ISHELL_CreateInstance(piShell, AEECLSID_FONT_BASIC11, (void **)ppif);
         case AEECLSID_FONTSYSBOLD:

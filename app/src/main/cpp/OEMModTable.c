@@ -758,6 +758,7 @@ extern const AEEStaticClass **AEESIM_GetStaticClassLists(void);
 #endif /* #if defined(AEE_SIMULATOR) */
 
 extern const AEEStaticClass gAEEGLClasses[];
+extern const AEEStaticClass gAEEKDDIClasses[];
 
 /*==================================================================
    Returns pointer to lists of static class entries.
@@ -1087,8 +1088,8 @@ const AEEStaticClass ***OEMMod_GetStaticClassLists(void)
       gascICipherWrapper,
       gascICipherFactory,
 #endif
-      // gascIWebUtil,
-      // gascIWebOpts,
+      gascIWebUtil,
+      gascIWebOpts,
 #if defined(FEATURE_BREW_SECURITY)
       gascIHashCTX,
       gascIHash,
@@ -1123,6 +1124,8 @@ const AEEStaticClass ***OEMMod_GetStaticClassLists(void)
       gAEESecSysClockClasses,
 
       gAEEGLClasses,
+
+      gAEEKDDIClasses,
 
       NULL
    };

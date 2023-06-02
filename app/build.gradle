@@ -10,8 +10,8 @@ android {
         applicationId "io.github.usernameak.brewemulator"
         minSdkVersion 10
         targetSdkVersion 22
-        versionCode 100110
-        versionName "1.0.11.0"
+        versionCode 100120
+        versionName "1.0.12.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
@@ -42,7 +42,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    ndkVersion "25.1.8937393"
+    ndkVersion "25.2.9519653"
     lintOptions {
         checkReleaseBuilds false
     }

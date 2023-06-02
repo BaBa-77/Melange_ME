@@ -1,10 +1,10 @@
 process handle -p true -n true -s true SIGSEGV
 
-b SIG_VerifyFile
-module name is in: p (char*)$r2
-
 b -a `(void())Mod_Load`+0x230
 module address is in: reg r r0
+
+b SIG_VerifyFile
+module name is in: p (char*)$r2
 
 0x8d8743b8
 0x8d1d3480

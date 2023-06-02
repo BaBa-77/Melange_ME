@@ -45,7 +45,7 @@ int OEM_Notify(OEMNotifyEvent evt, uint32 dw) {
             if (gbInResetBREW)
                 break;
             CALLBACK_Init(&gCBStartLauncherApp, StartLauncherApp, NULL);
-            AEE_ResumeCallback(&gCBStartLauncherApp,0);
+            AEE_ResumeCallback(&gCBStartLauncherApp, 0);
             break;
 
         case OEMNTF_RESET_BREW:
@@ -76,13 +76,11 @@ int OEM_Notify(OEMNotifyEvent evt, uint32 dw) {
     return (0);
 }
 
-boolean OEM_IsClsOKInSafeMode(uint32 clsid)
-{
+boolean OEM_IsClsOKInSafeMode(uint32 clsid) {
     return TRUE;
 }
 
-boolean OEM_SimpleBeep(BeepType nBeepType, boolean bLoud)
-{
+boolean OEM_SimpleBeep(BeepType nBeepType, boolean bLoud) {
     return TRUE;
 }
 
@@ -112,35 +110,34 @@ int OEM_GetUpdateVersion(char *pszVersion, int *pnLen) {
     return SUCCESS;
 }
 
-void OEM_AuthorizeDownload(IDownload * pd, DLITEMID iID, DLPRICEID iPrice,DLItem * pItem,PFNCHECKDLCB pfn, void * pUser)
-{
-    pfn(pUser,iID,iPrice,0);
+void OEM_AuthorizeDownload(IDownload *pd, DLITEMID iID, DLPRICEID iPrice, DLItem *pItem,
+                           PFNCHECKDLCB pfn, void *pUser) {
+    pfn(pUser, iID, iPrice, 0);
 }
 
-int OEM_SetConfig(AEEConfigItem i, void * pBuff, int nSize) {
+int OEM_SetConfig(AEEConfigItem i, void *pBuff, int nSize) {
     return EUNSUPPORTED;
 }
 
-static void GetMobileInfo(AEEMobileInfo * pMobileInfo) {
+static void GetMobileInfo(AEEMobileInfo *pMobileInfo) {
     pMobileInfo->nCurrNAM = 0;
     breGetConfigEntry(BRE_CFGE_ESN, &pMobileInfo->dwESN);
-    breGetConfigEntry(BRE_CFGE_IMEI, &pMobileInfo-> szMobileID);
+    breGetConfigEntry(BRE_CFGE_IMEI, &pMobileInfo->szMobileID);
 }
 
-int OEM_GetConfig(AEEConfigItem i, void * pBuff, int nSize)
-{
-    switch(i) {
+int OEM_GetConfig(AEEConfigItem i, void *pBuff, int nSize) {
+    switch (i) {
         case CFGI_MOBILEINFO:
-            if(!pBuff || nSize != sizeof(AEEMobileInfo))
-                return(EBADPARM);
+            if (!pBuff || nSize != sizeof(AEEMobileInfo))
+                return (EBADPARM);
 
-            GetMobileInfo((AEEMobileInfo *)pBuff);
-            return(0);
+            GetMobileInfo((AEEMobileInfo *) pBuff);
+            return (0);
         case CFGI_AUTOSTART: {
-            AEECLSID * pc = (AEECLSID *)pBuff;
+            AEECLSID *pc = (AEECLSID *) pBuff;
 
-            if(nSize != sizeof(AEECLSID))
-                return(EBADPARM);
+            if (nSize != sizeof(AEECLSID))
+                return (EBADPARM);
 
             // *pc = 0x01035893;// 0x01009FF0;
             *pc = AEECLSID_BREWAPPMGR_BID;//0x010719f9;
@@ -149,9 +146,9 @@ int OEM_GetConfig(AEEConfigItem i, void * pBuff, int nSize)
             return SUCCESS;
         }
         case CFGI_LNG: {
-            if(nSize < sizeof(uint32))
+            if (nSize < sizeof(uint32))
                 return EBADPARM;
-            *(uint32*)pBuff = LNG_ENGLISH;
+            *(uint32 *) pBuff = LNG_ENGLISH;
             return SUCCESS;
         }
     }
@@ -162,10 +159,11 @@ void OEM_SetBAM_ADSAccount(void) {
 }
 
 #include "../bre2/brewemu.h"
+#include "../brekddi/brekddi_constants.h"
 #include <android/native_window.h>
 #include <AEEDeviceNotifier.h>
 
-void OEM_GetDeviceInfo(AEEDeviceInfo * pi) {
+void OEM_GetDeviceInfo(AEEDeviceInfo *pi) {
     // TODO:
 
     int width, height;
@@ -176,7 +174,7 @@ void OEM_GetDeviceInfo(AEEDeviceInfo * pi) {
     pi->cxAltScreen = 0;
     pi->cyAltScreen = 0;
     pi->cxScrollBar = 8;
-    pi->wEncoding = AEE_ENC_UTF8;
+    pi->wEncoding = AEE_ENC_S_JIS;
     pi->wMenuTextScroll = 200;
     pi->nColorDepth = 24;
     pi->wMenuImageDelay = 1000;
@@ -200,28 +198,28 @@ void OEM_GetDeviceInfo(AEEDeviceInfo * pi) {
 }
 
 static const RGBVAL gSystemColors[] = {
-    0,
-    0x000000FF, // CLR_USER_TEXT
-    0xFFFFFFFF, // CLR_USER_BACKGROUND
-    0x2c3e50ff, // CLR_USER_LINE
-    0x000000ff, // CLR_SYS_TITLE
-    0xFFFFFFFF, // CLR_SYS_TITLE_TEXT
-    0xecf0f1ff, // CLR_SYS_ITEM
-    0x000000FF, // CLR_SYS_ITEM_TEXT
-    0x2980b9FF, // CLR_SYS_ITEM_SEL
-    0xFFFFFFFF, // CLR_SYS_ITEM_SEL_TEXT
-    0xbdc3c7FF, // CLR_SYS_WIN
-    0xFFFFFFFF, // CLR_SYS_FRAME_HI
-    0x000000FF, // CLR_SYS_FRAME_LO
-    0xCCCCCCFF, // CLR_SYS_LT_SHADOW
-    0x444444FF, // CLR_SYS_DK_SHADOW
-    0x95a5a6FF, // CLR_SYS_SCROLLBAR
-    0x34495eFF, // CLR_SYS_SCROLLBAR_FILL,
-    0 // CLR_SYS_LAST
+        0,
+        0x000000FF, // CLR_USER_TEXT
+        0xFFFFFFFF, // CLR_USER_BACKGROUND
+        0x2c3e50ff, // CLR_USER_LINE
+        0x000000ff, // CLR_SYS_TITLE
+        0xFFFFFFFF, // CLR_SYS_TITLE_TEXT
+        0xecf0f1ff, // CLR_SYS_ITEM
+        0x000000FF, // CLR_SYS_ITEM_TEXT
+        0x2980b9FF, // CLR_SYS_ITEM_SEL
+        0xFFFFFFFF, // CLR_SYS_ITEM_SEL_TEXT
+        0xbdc3c7FF, // CLR_SYS_WIN
+        0xFFFFFFFF, // CLR_SYS_FRAME_HI
+        0x000000FF, // CLR_SYS_FRAME_LO
+        0xCCCCCCFF, // CLR_SYS_LT_SHADOW
+        0x444444FF, // CLR_SYS_DK_SHADOW
+        0x95a5a6FF, // CLR_SYS_SCROLLBAR
+        0x34495eFF, // CLR_SYS_SCROLLBAR_FILL,
+        0 // CLR_SYS_LAST
 };
 
 int OEM_GetDeviceInfoEx(AEEDeviceItem nItem, void *pBuff, int *pnSize) {
-    switch(nItem) {
+    switch (nItem) {
         case AEE_DEVICESTATE_SCR_ORIENTATION: {
             int nSize;
 
@@ -247,8 +245,8 @@ int OEM_GetDeviceInfoEx(AEEDeviceItem nItem, void *pBuff, int *pnSize) {
         case AEE_DEVICESTATE_FLIP_OPEN: {
             int nSize;
 
-            if(!pnSize)
-                return(EBADPARM);
+            if (!pnSize)
+                return (EBADPARM);
 
             nSize = MIN(*pnSize, sizeof(boolean));
             *pnSize = sizeof(boolean);
@@ -269,8 +267,8 @@ int OEM_GetDeviceInfoEx(AEEDeviceItem nItem, void *pBuff, int *pnSize) {
         case AEE_DEVICEITEM_SYS_COLORS_DISP1: {
             int nSize;
 
-            if(!pnSize)
-                return(EBADPARM);
+            if (!pnSize)
+                return (EBADPARM);
 
             nSize = MIN(*pnSize, CLR_SYS_LAST * sizeof(RGBVAL));
             *pnSize = CLR_SYS_LAST * sizeof(RGBVAL);
@@ -283,33 +281,31 @@ int OEM_GetDeviceInfoEx(AEEDeviceItem nItem, void *pBuff, int *pnSize) {
 
             return SUCCESS;
         }
-        case AEE_DEVICEITEM_SOFTKEY_COUNT:
-        {
+        case AEE_DEVICEITEM_SOFTKEY_COUNT: {
             if (!pnSize)
-                return(EBADPARM);
+                return (EBADPARM);
 
             if (!pBuff || *pnSize < sizeof(uint8)) {
                 *pnSize = sizeof(uint8);
-                return(SUCCESS);
+                return (SUCCESS);
             }
 
-            *((uint8 *)pBuff) = 2;
-            return(SUCCESS);
+            *((uint8 *) pBuff) = 2;
+            return (SUCCESS);
         }
-        case AEE_DEVICEITEM_DISPINFO1:
-        {
-            AEEBitmapInfo  bi;
-            AEEDeviceInfo  di;
-            int            nSize;
+        case AEE_DEVICEITEM_DISPINFO1: {
+            AEEBitmapInfo bi;
+            AEEDeviceInfo di;
+            int nSize;
 
-            if(!pnSize)
-                return(EBADPARM);
+            if (!pnSize)
+                return (EBADPARM);
 
-            nSize = MIN(*pnSize, (int)sizeof(AEEBitmapInfo));
+            nSize = MIN(*pnSize, (int) sizeof(AEEBitmapInfo));
             *pnSize = sizeof(AEEBitmapInfo);
 
             if (!pBuff) {
-                return(SUCCESS);
+                return (SUCCESS);
             }
 
             OEM_GetDeviceInfo(&di);
@@ -318,23 +314,35 @@ int OEM_GetDeviceInfoEx(AEEDeviceItem nItem, void *pBuff, int *pnSize) {
             bi.nDepth = di.nColorDepth;
 
 //lint -save -e611 -e740  Suppress complaint about pointer casts
-            MEMCPY(pBuff, &bi, (uint32)nSize);
+            MEMCPY(pBuff, &bi, (uint32) nSize);
 //lint -restore
 
             return SUCCESS;
         }
-        case AEE_DEVICEITEM_MANNER_MODE:
-        {
+        case AEE_DEVICEITEM_MANNER_MODE: {
             if (!pnSize)
                 return EBADPARM;
 
-            if (!pBuff || *pnSize < sizeof(uint32))
-            {
+            if (!pBuff || *pnSize < sizeof(uint32)) {
                 *pnSize = sizeof(uint32);
-                return(SUCCESS);
+                return (SUCCESS);
             }
-            *((uint32 *)pBuff) = (uint32)AEE_MANNER_MODE_NORMAL;
+            *((uint32 *) pBuff) = (uint32) AEE_MANNER_MODE_NORMAL;
             *pnSize = sizeof(uint32);
+            return SUCCESS;
+        }
+        case AEE_DEVICEITEM_CARRIER_KDDI_SUBSCRIBER_NO: { // X-UP-SUBNO for KDDI
+            if (!pnSize) return EBADPARM;
+
+            const char *uid_string = "8113371337";
+
+            if (!pBuff || *pnSize < strlen(uid_string) + 1) {
+                *pnSize = strlen(uid_string) + 1;
+                return SUCCESS;
+            }
+            strcpy((char *) pBuff, uid_string);
+            *pnSize = strlen(uid_string) + 1;
+
             return SUCCESS;
         }
     }
