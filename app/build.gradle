@@ -3,6 +3,8 @@ plugins {
 }
 
 android {
+    namespace "io.github.usernameak.brewemulator"
+
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
@@ -42,7 +44,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    ndkVersion "25.2.9519653"
+    ndkVersion "23.2.8568313"
     lintOptions {
         checkReleaseBuilds false
     }

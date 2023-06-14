@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.13)
 
 project("brewemulator")
 
+add_definitions(-D__ANDROID_MIN_SDK_VERSION__=16)
+
 set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O0")
@@ -258,3 +260,4 @@ target_link_libraries(brewemu
         ${log-lib}
         ${android-lib}
         )
+
