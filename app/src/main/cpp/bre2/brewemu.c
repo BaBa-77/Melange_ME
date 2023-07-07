@@ -85,7 +85,7 @@ static AEECallback gCBStartLauncherApp;
 #include <stdbool.h>
 #include <AEE_OEMEvent.h>
 #include "breGfx.h"
-#include "breMockSignature.h"
+#include "breHooks.h"
 #include "breScreenshot.h"
 
 void breMainStart();
@@ -93,7 +93,7 @@ void breMainTerminate();
 
 JNIEXPORT void JNICALL
 Java_io_github_usernameak_brewemulator_MainActivity_brewEmuJNIStartup(JNIEnv *env, jobject thiz) {
-    breHookSignatureVerification();
+    breSetupHooks();
 
     acquireExternalFilesDir(env, thiz);
 

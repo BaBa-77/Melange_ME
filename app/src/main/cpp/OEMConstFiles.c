@@ -61,6 +61,8 @@ extern AEEConstFile gCODESIG_MOD;
 extern AEEConstFile gVIEWAPP_MIF;
 #endif
 
+extern AEEConstFile gAPPUI_MIF;
+
 //entries for pdiparsers & vCalStore
 #if !defined(AEE_SIMULATOR)
 extern AEEConstFile gAEEVCALSTORE_MIF;
@@ -99,6 +101,7 @@ extern const AEEConstFile *  gpODMAppsConstFiles[];
 #endif
 
 static const AEEConstFile *  gpOEMConstFiles[] = {
+                                                            &gAPPUI_MIF,
 #if   !defined(_AEEWIN)
 #if defined(FEATURE_APP_MANAGER)
                                                             &gBREWAPPMGR_MIF,

@@ -27,12 +27,12 @@ int SysClock_New(IShell *piShell, AEECLSID cls, void **ppif);
 
 static CSysClock *gpSysClk = NULL;
 
-extern const AEEStaticClass gAEESysClockClasses[] = {
+const AEEStaticClass gAEESysClockClasses[] = {
         {AEECLSID_SYSCLOCK, ASCF_UPGRADE, 0, 0, SysClock_New},
         {0, 0, 0, NULL, NULL}
 };
 
-extern const AEEStaticClass gAEESecSysClockClasses[] = {
+const AEEStaticClass gAEESecSysClockClasses[] = {
         {AEECLSID_SECSYSCLOCK, ASCF_UPGRADE, 0, 0, SysClock_New},
         {0, 0, 0, NULL, NULL}
 };

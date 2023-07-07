@@ -236,6 +236,8 @@ extern int A1ModEnv_CreateInstance(IShell * pIShell, AEECLSID clsID, void ** ppo
 extern int ViewApp_Load(IShell *ps, void * pHelpers, IModule ** pMod);
 #endif
 
+extern int AppUI_Load(IShell *ps, void * pHelpers, IModule ** pMod);
+
 //
 // App Manager
 //
@@ -291,6 +293,7 @@ const AEEStaticMod ***OEMMod_GetStaticModLists(void)
    //
    //
    static AEEStaticMod asmBREW[] = {
+     {AEEFS_MIF_DIR"appui.mif", AppUI_Load},
 #if defined(FEATURE_APP_MANAGER)
       {AEEFS_MIF_DIR"brewappmgr.mif", AppMgr_Load},
 #endif

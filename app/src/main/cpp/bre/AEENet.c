@@ -696,7 +696,8 @@ extern int32 OEMSocket_Writev(
         uint16 iovcount,      /* number of array items */
         int16 *err
 ) {
-
+    *err = AEE_NET_EOPNOTSUPP;
+    return AEE_NET_ERROR;
 }
 
 extern int32 OEMSocket_Readv(

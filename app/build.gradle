@@ -3,17 +3,15 @@ plugins {
 }
 
 android {
-    namespace "io.github.usernameak.brewemulator"
-
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "io.github.usernameak.brewemulator"
         minSdkVersion 10
-        targetSdkVersion 22
-        versionCode 100120
-        versionName "1.0.12.0"
+        targetSdkVersion 20
+        versionCode 101000
+        versionName "1.1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
@@ -44,7 +42,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    ndkVersion "23.2.8568313"
+    ndkVersion "25.2.9519653"
     lintOptions {
         checkReleaseBuilds false
     }

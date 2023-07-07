@@ -1,0 +1,6 @@
+#ifndef APPUI_BID
+#define APPUI_BID
+
+#define AEECLSID_APPUI_BID    	0x01008000
+
+#endif //APPUI_BID

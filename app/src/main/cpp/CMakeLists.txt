@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 3.13)
 
 project("brewemulator")
 
-add_definitions(-D__ANDROID_MIN_SDK_VERSION__=16)
-
 set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O0")
@@ -13,7 +11,10 @@ add_library(brew STATIC IMPORTED)
 set_property(TARGET brew PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/brewrt/brew.fixed.lib)
 
 add_library(aee STATIC IMPORTED)
-set_property(TARGET aee PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/brewrt/aee.fixed.lib)
+set_property(TARGET aee PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/brewrt/aee.fixed2.lib)
+
+target_link_libraries(aee INTERFACE brew)
+target_link_libraries(brew INTERFACE aee)
 
 add_library(aeedialog STATIC IMPORTED)
 set_property(TARGET aeedialog PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/brewrt/aeedialog.fixed.lib)
@@ -127,24 +128,15 @@ add_library(brewemu SHARED
         bre2/stb_image_write.h
         bre2/breScreenshot.c
         bre2/breScreenshot.h
+        bre2/breSetjmp.S
+        bre2/breThreadHooks.c
+        bre2/breHooks.h
+        bre2/breHooks.c
 
         brekddi/brekddi.c
 
         brefont/brefont_jp.c
         brefont/msx_kanji.h
-
-        brewappmgr/BrewAppMgr.c
-        brewappmgr/BrewAppMgr.h
-        brewappmgr/BrewAppMgrUtils.c
-        brewappmgr/BrewAppMgrUtils.h
-        brewappmgr/BrewAppMgrSettings.h
-        brewappmgr/MobileShop.c
-        brewappmgr/MobileShop.h
-        brewappmgr/brewappmgr_mif.c
-        brewappmgr/oemcfg_txt.c
-        brewappmgr/brewappmgrcommon_bar.c
-        brewappmgr/brewappmgrln_bar.c
-        brewappmgr/brewappmgrls_bar.c
 
         AEEAppGen.c
         AEEModGen.c
@@ -214,7 +206,13 @@ add_library(brewemu SHARED
         mmapi/MMCMXLoader.h
         )
 
+set(APPUI_BUILD_STATIC_MODULE ON)
+add_subdirectory(appui)
+
+target_link_libraries(brewemu PRIVATE AppUI)
+
 set_property(SOURCE bre/ARMLegacyABI.S PROPERTY LANGUAGE C)
+set_property(SOURCE bre2/breSetjmp.S PROPERTY LANGUAGE C)
 
 add_definitions(-DAEE_STATIC -DBREW_STATIC_APP)
 
@@ -230,7 +228,9 @@ find_library(log-lib log)
 find_library(android-lib android)
 find_package(ZLIB)
 
-target_link_libraries(brewemu
+target_link_libraries(brewemu PRIVATE
+        aeenet
+        aeeweb
         brew
         aee
         aeebci
@@ -240,8 +240,6 @@ target_link_libraries(brewemu
         aeefont
         aeesecurity
         aeersa
-        aeeweb
-        aeenet
         aeecontrols
         aeemenu
         aeeijg
@@ -255,9 +253,9 @@ target_link_libraries(brewemu
         brewz
         bpng
         z
-        egl
+        EGL
         GLESv1_CM
         ${log-lib}
         ${android-lib}
         )
-
+target_link_options(brewemu PRIVATE -Wl,--no-fatal-warnings)

@@ -17,6 +17,8 @@ done
 
 rm -r *.lib.objs1
 rm -r *.lib.objs2
+
+arm-none-eabi-objcopy --redefine-sym setjmp=breSetjmp --redefine-sym longjmp=breLongjmp --globalize-symbol=IThread_SetStack aee.fixed.lib aee.fixed2.lib
 # rm *.o
 # rm *.fixed.lib
 # find -name \*.lib -exec arm-none-eabi-ld -relocatable --whole-archive --allow-multiple-definition {} -o {}.o \;

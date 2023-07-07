@@ -207,13 +207,9 @@ extern int OEMBitmapDevChild_New(IShell * piShell, AEECLSID cls, void **ppif)
 
 static int OEMSysFont_New(IShell * piShell, AEECLSID cls, void **ppif)
 {
-    typedef struct CFont CFont;
-    extern CFont gKanjiFont;
     switch (cls) {
         case AEECLSID_FONTSYSNORMAL:
-            *ppif = &gKanjiFont;
-            // return ISHELL_CreateInstance(piShell, AEECLSID_FONT_BASIC11, (void **)ppif);
-            return SUCCESS;
+            return ISHELL_CreateInstance(piShell, AEECLSID_FONT_BASIC11, (void **)ppif);
         case AEECLSID_FONTSYSITALIC:
             return ISHELL_CreateInstance(piShell, AEECLSID_FONT_BASIC11, (void **)ppif);
         case AEECLSID_FONTSYSBOLD:
@@ -271,6 +267,7 @@ int breOemDpyUpdate() {
     IDisplayDev *pMe = gOEMDisplayDev;
 
     if(!pMe) return SUCCESS;
+
     if(!breGfxIsInitialized()) return SUCCESS;
     if(!gNativeWindow) return SUCCESS;
 
@@ -381,7 +378,6 @@ int breOemDpyUpdate() {
     breGfxSwap();
 
     breGfxRelCx();
-
 
     return SUCCESS;
 }

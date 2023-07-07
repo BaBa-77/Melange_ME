@@ -9,6 +9,8 @@ static int gBreMainTimer = -1;
 static int gBreMainDispatchPipe[2] = {-1, -1};
 static pthread_t gBreMainThread;
 
+int breOemDpyUpdate();
+
 static void *breMainLoop(void *unused) {
     gBreMainTimer = syscall(SYS_timerfd_create, CLOCK_MONOTONIC, 04000);
     if(gBreMainTimer < 0) {

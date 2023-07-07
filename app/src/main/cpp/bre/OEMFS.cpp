@@ -12,6 +12,8 @@ extern "C" {
 #include "OEMFSPath_priv.h"
 #include "../bre2/breConfig.h"
 #include <AEEStdLib.h>
+#include <syscall.h>
+#include <sys/vfs.h>
 
 #define POSIX_JANUARY_6_1980 315964800
 #define POSIX_TIME_TOPHONE(t) ((t)-POSIX_JANUARY_6_1980)
@@ -369,7 +371,7 @@ int OEMFS_Close(OEMINSTANCE handle)
 
 int OEMFS_GetFreeSpaceEx(const char *szPath, uint32 *pdwTotal, uint32 *pdwFree)
 {
-    struct statvfs info;
+    struct statfs info;
     uint64 qwTotal;
     uint64 qwFree;
     int nRet = -1;
@@ -384,7 +386,7 @@ int OEMFS_GetFreeSpaceEx(const char *szPath, uint32 *pdwTotal, uint32 *pdwFree)
     info.f_bavail = 0;
 
     if ((char *)0 != szPath) {
-        nRet = statvfs ( szPath, &info );
+        nRet = statfs ( szPath, &info );
     } else {
         return EBADFILENAME;
     }
@@ -438,7 +440,7 @@ void OEMFS_RegRmtAccessChk(const char **pszDirList, uint32 nListElements, PFNCHK
 
 int OEMFS_StatVFS(const char *cpszPath, uint64 *pqwTotal, uint64 *pqwFree)
 {
-    struct statvfs buf;
+    struct statfs buf;
     uint64 qwTotal;
 
     uint64_t storageLimit;
@@ -457,7 +459,7 @@ int OEMFS_StatVFS(const char *cpszPath, uint64 *pqwTotal, uint64 *pqwFree)
     buf.f_blocks = 0;
     buf.f_bavail = 0;
 
-    if(-1 == statvfs (cpszPath, &buf)) {
+    if (-1 == statfs(cpszPath, &buf)) {
         return OEMFS_MapErrno();
     }
 

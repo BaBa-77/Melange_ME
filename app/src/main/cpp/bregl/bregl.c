@@ -5,6 +5,7 @@
 #include "AEEEGL10.h"
 #include "AEEGLES10.h"
 #include "AEECLSID_QEGL.bid"
+#include <EGL/egl.h>
 
 struct breEGLSurface {
     EGLSurface pRealSurface;
@@ -1496,7 +1497,7 @@ static struct breEGLProcAddressMapEntry g_eglProcAddressMap[] = {
         {"eglCopyBuffers",            (void (*)()) CEGL_eglCopyBuffers},
         {"eglSwapBuffers",            (void (*)()) CEGL_eglSwapBuffers},
         {"eglQueryString",            (void (*)()) CEGL_eglQueryString},
-        {"eglGetColorBufferQUALCOMM", (void (*)()) CEGL_eglGetColorBufferQUALCOMM},
+        // {"eglGetColorBufferQUALCOMM", (void (*)()) CEGL_eglGetColorBufferQUALCOMM},
         {"glGetString",               (void (*)()) CGL_glGetString},
         {"glCompressedTexImage2D",    (void (*)()) CGL_glCompressedTexImage2D},
         {"glCompressedTexSubImage2D", (void (*)()) CGL_glCompressedTexSubImage2D},
