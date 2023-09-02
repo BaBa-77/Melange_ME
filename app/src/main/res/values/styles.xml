@@ -1,0 +1,56 @@
+<resources>
+    <style name="KeypadButton" parent="@android:style/Widget.Button">
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:typeface">serif</item>
+        <!--<item name="android:background">@drawable/keypad_button</item>-->
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+		<item name="android:scaleType">fitXY</item>
+        </style>
+		
+	<style name="mainTheme" parent="Theme.AppCompat.NoActionBar">
+		<item name="android:windowFullscreen">false</item>
+	</style>
+		
+	<style name="fullscreenTheme" parent="Theme.AppCompat.NoActionBar">
+		<item name="android:windowFullscreen">true</item>
+	</style>
+	
+	<style name="teks_title" parent="@android:Widget.TextView">
+		<item name="android:textSize">25sp</item>
+		<item name="android:typeface">monospace</item>
+		<item name="android:textColor">#FFFFC000</item>
+	</style>
+	
+	<style name="teks_form" parent="@android:Widget.TextView">
+		<item name="android:textSize">20sp</item>
+		<item name="android:textColor">#FFFFFFFF</item>
+		<item name="android:typeface">monospace</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:layout_marginRight">10dp</item>
+	</style>
+	
+	<style name="textEdit" parent="@android:Widget.EditText">
+		<item name="android:textSize">20sp</item>
+		<item name="android:textColor">#FFFFFFFF</item>
+		<item name="android:typeface">monospace</item>
+		<item name="android:gravity">center</item>
+		<!--<item name="android:background">#17FFFFFF</item>-->
+	</style>
+	
+	<style name="textSpinner" parent="@android:Widget.Spinner">
+		<item name="android:textSize">20sp</item>
+		<item name="android:textColor">#FFFFFFFF</item>
+		<item name="android:typeface">monospace</item>
+		<item name="android:background">#FF777777</item>
+	</style>
+	
+	<style name="switchMe" parent="Widget.AppCompat.CompoundButton.Switch">
+		<item name="android:layout_marginTop">10dp</item>
+		<item name="android:layout_marginBottom">10dp</item>
+		<item name="android:thumbTint">@color/thumb</item>
+		<item name="android:trackTint">@color/track</item>
+	</style>
+	
+</resources>
