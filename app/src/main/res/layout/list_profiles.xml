@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:gravity="center"
+	android:background="#00000000"
+	android:paddingEnd="75dp"
+	android:paddingStart="75dp">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="5dp">
+
+		<RelativeLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="#33FFFFFF">
+
+			<Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="+"
+				android:padding="1dp"
+				android:typeface="monospace"
+				android:textStyle="bold"
+				android:textSize="50sp"
+				android:background="#00000000"
+				android:id="@+id/btn_profile_add"
+				android:gravity="center"
+				android:layout_alignParentEnd="true"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Profiles"
+				android:layout_centerInParent="true"
+				android:typeface="monospace"
+				android:textStyle="bold"
+				android:textSize="25sp"
+				android:padding="3dp"
+				android:id="@+id/listprofilesTextView1"/>
+
+		</RelativeLayout>
+
+		<ListView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/theList"
+			android:layout_gravity="center_horizontal"
+			android:clipChildren="true"
+			android:textAlignment="textStart"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+
