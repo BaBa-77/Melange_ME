@@ -23,7 +23,7 @@ jobs:
         #path: app/build/outputs/apk/debug/app-debug.apk
 
     - name: Compile java code
-      run: javac -Xlint:deprecation /src/main/java/io/github/usernameak/brewemulator/MainActivity.java; javac -Xlint:unchecked /src/main/java/io/github/usernameak/brewemulator/MainActivity.java
+      run: javac -Xlint:deprecation /app/src/main/java/io/github/usernameak/brewemulator/MainActivity.java; javac -Xlint:unchecked /app/src/main/java/io/github/usernameak/brewemulator/MainActivity.java
       working-directory: .
     - name: Instal Gradle
       run: sudo apt update; sudo apt install gradle
