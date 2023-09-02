@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:padding="50dp"
+	android:gravity="center">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="#000000"
+		android:gravity="center_horizontal">
+
+		<RadioGroup
+			android:orientation="vertical"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="5dp"
+			android:id="@+id/autoInput_theRadio">
+
+			<RadioButton
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/autoinput_new"
+				android:text="@string/str_new"
+				android:typeface="serif"/>
+
+			<RadioButton
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/autoinput_overwrite"
+				android:text="@string/str_overwrite"
+				android:typeface="serif"/>
+
+			<RadioButton
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/autoinput_append"
+				android:text="@string/str_append"
+				android:typeface="serif"/>
+
+		</RadioGroup>
+
+		<Spinner
+			android:id="@+id/autoInput_theSpinner"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="5dp">
+
+		</Spinner>
+
+		<EditText
+			android:layout_width="wrap_content"
+			android:inputType="textPersonName"
+			android:layout_height="wrap_content"
+			android:ems="10"
+			android:id="@+id/autoinput_theEdit"
+			android:typeface="monospace"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Time (millisecond) before start 'append':"
+			android:layout_marginTop="15dp"
+			android:id="@+id/autoinputTextView1"/>
+
+		<EditText
+			android:layout_width="wrap_content"
+			android:inputType="numberSigned"
+			android:layout_height="wrap_content"
+			android:ems="5"
+			android:id="@+id/autoInput_extraTimeAppend"
+			android:typeface="monospace"
+			android:text="1000"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+
