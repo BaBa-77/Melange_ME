@@ -3,34 +3,64 @@
     xmlns:tools="http://schemas.android.com/tools" package="io.github.usernameak.brewemulator">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+	<!--<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />-->
+		<!--tools:ignore="ScopedStorage" />-->
 
     <application
         android:allowBackup="true"
-        android:label="Melange"
+        android:label="Melange [Unofficial Update]"
         android:supportsRtl="true"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round">
+        android:roundIcon="@mipmap/ic_launcher_round"
+		android:installLocation="internalOnly">
 
-        <meta-data android:name="android.max_aspect" android:value="2.4" />
+        <!--<meta-data android:name="android.max_aspect" android:value="2.4" />-->
 
-        <activity android:theme="@android:style/Theme.NoTitleBar"
-            android:name=".MainActivity"
-            android:resizeableActivity="false"
+        <activity 
+            android:name=".MyLauncherActivity"
+			android:theme="@style/mainTheme"
+            android:resizeableActivity="true"
             android:configChanges="orientation|screenSize"
             android:icon="@mipmap/ic_launcher"
             android:roundIcon="@mipmap/ic_launcher_round"
-            tools:targetApi="n"
             tools:ignore="NonResizeableActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+		
+		<activity
+			android:name=".MainActivity"
+			android:theme="@style/mainTheme"
+			android:resizeableActivity="true"
+            android:configChanges="orientation|screenSize"
+			tools:ignore="NonResizeableActivity"
+			android:exported="true">
+		</activity>
+		
+		<!--<activity
+			android:name=".TesActivity"
+			android:theme="@style/mainTheme">
+		</activity>-->
+		
+		<!--<activity 
+            android:name=".LauncherActivity"
+			android:theme="@style/floatingTheme"
+            android:resizeableActivity="true"
+            android:configChanges="orientation|screenSize"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            tools:ignore="NonResizeableActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+		
     </application>
 
 </manifest>
