@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+	<!-- Configuration -->
+	<string translateable="true" name="start_emulator">Start Emulator</string>
+	<string translateable="true" name="save">Save</string>
+	<string translateable="true" name="saved">Saved</string>
+	<string translateable="true" name="configurate">Configure</string>
+	<string translateable="true" name="general">General</string>
+	<string translateable="true" name="library">Library</string>
+	<string translateable="true" name="rotation">Rotation</string>
+	<string translateable="true" name="fullscreen">Fullscreen</string>
+	<string translateable="true" name="info_fullscreen">⚠️The height of view will be change, you will see the vertical position of item looks not right after changing(on/off) this</string>
+	<string translateable="true" name="action_bar">Action Bar</string>
+	<string translateable="true" name="skip_this">Skip This (configuration menu)</string>
+	<string translateable="true" name="bg_color">Background Color</string>
+	<string translateable="true" name="ext_bg">External Background</string>
+	<string translateable="true" name="info_ext_bg">⚠️ Place the image at \'/sdcard/MelangeBREW/sys/bg.png\'</string>
+	<string translateable="true" name="monitor">Monitor</string>
+	<string translateable="true" name="resolution">Resolution</string>
+	<string translateable="true" name="scale_percent">Scale (%)</string>
+	<string translateable="true" name="info_scale">⚠️ Do not set too high</string>
+	<string translateable="true" name="keypad">Keypad</string>
+	<string translateable="true" name="label_size">Label Size</string>
+	<string translateable="true" name="label_color">Label Color</string>
+	<string translateable="true" name="margin_top">Margin Top</string>
+	<string translateable="true" name="margin_bottom">Margin Bottom</string>
+	<string translateable="true" name="margin_right">Margin Right</string>
+	<string translateable="true" name="margin_left">Margin Left</string>
+	<string translateable="true" name="btn_diagonal">Diagonal Buttons [Experiment]</string>
+	<string translateable="true" name="info_btn_diagonal">⚠️ Only available in landscape mode. May impact response speed of the entire \'Dpad\' buttons</string>
+	<string translateable="true" name="ext_bg_label">External Background Label</string>
+	<string translateable="true" name="info_ext_bg_label">⚠️ Place the image at \'/sdcard/MelangeBREW/sys/bgBtn.png\'</string>
+	<string translateable="true" name="ext_label">External Label-Code [Experiment]</string>
+	<string translateable="true" name="info_ext_label">⚠️ See and edit at \'/sdcard/MelangeBREW/sys/keypad/keypad_*.txt\'</string>
+	<string translateable="true" name="info_configurate">Start emulator to save configuration</string>
+	<string translateable="true" name="str_profiles">Profiles</string>
+	<string translateable="true" name="str_new">New</string>
+	<string translateable="true" name="str_delete">Delete</string>
+	<string translateable="true" name="str_import">Import</string>
+	<string translateable="true" name="str_overwrite">Overwrite</string>
+	<string translateable="true" name="str_append">Append</string>
+	<string translateable="true" name="str_profile">Profile</string>
+	<string translateable="true" name="str_close">Close</string>
+	<string translateable="true" name="str_reset">Reset</string>
+	
+	<string translateable="true" name="msg_profile_delete">Are you sure wanna delete this profile?</string>
+	<string translateable="true" name="str_yes">Yes</string>
+	<string translateable="true" name="str_cancel">Cancel</string>
+	
+	<string translateable="true" name="new_profile_title">Create new profile</string>
+	
+	<string translateable="true" name="str_load">Load</string>
+	<string translateable="true" name="str_rename">Rename</string>
+	<string translateable="true" name="str_delete">Delete</string>
+	
+	<!-- Library Options -->
+	<string-array name="lib_name">
+		<item>v1.1.0</item>
+		<item>v1.1.0a (Beta) [old]</item>
+	</string-array>
+
+	<!-- Orientation Options -->
+	<string-array name="orientation_name">
+		<item>Portrait</item>
+		<item>Landscape</item>
+	</string-array>
+	
+	<!-- keypad layout option -->
+	<string-array name="keypad_layout">
+		<item>Group</item>
+		<item>Separated</item>
+	</string-array>
+
+	<!-- Action Bar Menu -->
+	<string translateable="true" name="str_screenshot">Take Screenshot</string>
+	<string translateable="true" name="str_sett">Settings</string>
+	<string translateable="true" name="str_exit">Exit Application</string>
+	<string translateable="true" name="str_backEmu">Back to Emulator</string>
+	<string translateable="true" name="str_stop">Emulator Main Menu</string>
+	<string translateable="true" name="str_custom">Customization</string>
+	<string translateable="true" name="str_custom_off">Stop Customization > Save</string>
+	<string translateable="true" name="str_custom_move">Set Position</string>
+	<string translateable="true" name="str_custom_size">Set Size</string>
+	<string translateable="true" name="str_custom_alphaKeypad">Set Button Transparency</string>
+	<string translateable="true" name="str_custom_visibility">Set visibility button</string>
+		
+	<string translateable="true" name="rec_input">Auto-Input [Early Code]</string>
+	<string translateable="true" name="rec_cap">Record</string>
+	<string translateable="true" name="rec_play">Play</string>
+	<string translateable="true" name="rec_finish">Finish Auto-Input</string>
+
+	<!-- Dialogs -->
+	<string translateable="true" name="dialog_exit_title">Exit?</string>
+	<string translateable="true" name="dialig_exit_msg">All unsaved data will be lost!</string>
+	<string translateable="true" name="dialog_exit_btn_positive">Yes, exit</string>
+	<string translateable="true" name="dialog_exit_btn_negative">Cancel</string>
+	<string translateable="true" name="dialog_exit_btn_neutral">Save > Exit</string>
+
+	<string translateable="true" name="dialog_sett_title">Enter Settings?</string>
+	<string translateable="true" name="dialig_sett_msg">All unsaved data will be lost, close emulator?</string>
+	<string translateable="true" name="dialog_sett_btn_positive">Yes, open settings</string>
+	<string translateable="true" name="dialog_sett_btn_negative">Cancel</string>
+
+	<string translateable="true" name="dialog_stop_title">Go to Main Menu?</string>
+	<string translateable="true" name="dialig_stop_msg">All unsaved data will be lost, go to Main Menu?</string>
+	<string translateable="true" name="dialog_stop_btn_positive">Yes</string>
+	<string translateable="true" name="dialog_stop_btn_negative">Cancel</string>
+
+</resources>
