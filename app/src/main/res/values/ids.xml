@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+	
+<resources>
+	
+	<item name="keypad_potrait" type="id">keypad_potrait</item>
+	<item name="keypad_numpad" type="id">keypad_numpad</item>
+	<item name="keypad_dpad" type="id">keypad_dpad</item>
+	<item name="keypad_dpad_plus" type="id">keypad_dpad_plus</item>
+	<item name="monitor_potrait" type="id">monitor_potrait</item>
+	<item name="monitor_landscape" type="id">monitor_lanscape</item>
+	
+	<item name="menu_tes" type="id">menu_tes</item>
+	<item name="menu_item_screenshot" type="id">item_screenshot</item>
+	<item name="menu_item_exit" type="id">item_exit</item>
+	<item name="menu_item_sett" type="id">item_sett</item>
+	<item name="menu_item_stop" type="id">item_stop</item>
+	<item name="menu_custom" type="id">item_custom</item>
+	<item name="menu_custom_off" type="id">item_custom_off</item>
+	<item name="menu_custom_move" type="id">item_custom_move</item>
+	<item name="menu_custom_size" type="id">item_custom_move</item>
+	<item name="menu_custom_alphaKeypad" type="id">item_custom_alphaKeypad</item>
+	<item name="menu_custom_visibility" type="id">item_custom_visibility</item>
+	
+	<item name="menu_rec" type="id">item_rec</item>
+	<item name="menu_rec_cap" type="id">item_rec_cap</item>
+	<item name="menu_rec_play" type="id">item_rec_play</item>
+	<item name="menu_rec_finish" type="id">item_rec_finish</item>
+		
+</resources>
