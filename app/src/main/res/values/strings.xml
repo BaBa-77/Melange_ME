@@ -53,7 +53,6 @@
 	
 	<string translateable="true" name="str_load">Load</string>
 	<string translateable="true" name="str_rename">Rename</string>
-	<string translateable="true" name="str_delete">Delete</string>
 	
 	<!-- Library Options -->
 	<string-array name="lib_name">
