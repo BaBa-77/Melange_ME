@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:gravity="center">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:paddingTop="10dp"
+		android:paddingBottom="10dp">
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:paddingBottom="20dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="'title'"
+				android:textSize="25sp"
+				android:textColor="#00B00A"
+				android:typeface="monospace"
+				android:textStyle="bold"
+				android:id="@+id/theTitle"
+				android:paddingStart="10dp"
+				android:paddingEnd="10dp"/>
+
+		</LinearLayout>
+
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/visibilityLayout"/>
+
+		</ScrollView>
+
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/save"
+			android:id="@+id/btnOk"
+			android:typeface="serif"
+			android:textSize="25sp"
+			android:textStyle="bold|italic"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+
