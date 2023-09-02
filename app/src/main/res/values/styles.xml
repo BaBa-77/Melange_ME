@@ -17,13 +17,13 @@
 		<item name="android:windowFullscreen">true</item>
 	</style>
 	
-	<style name="teks_title" parent="@android:Widget.TextView">
+	<style name="teks_title" parent="@android:style/Widget.TextView">
 		<item name="android:textSize">25sp</item>
 		<item name="android:typeface">monospace</item>
 		<item name="android:textColor">#FFFFC000</item>
 	</style>
 	
-	<style name="teks_form" parent="@android:Widget.TextView">
+	<style name="teks_form" parent="@android:style/Widget.TextView">
 		<item name="android:textSize">20sp</item>
 		<item name="android:textColor">#FFFFFFFF</item>
 		<item name="android:typeface">monospace</item>
@@ -31,7 +31,7 @@
 		<item name="android:layout_marginRight">10dp</item>
 	</style>
 	
-	<style name="textEdit" parent="@android:Widget.EditText">
+	<style name="textEdit" parent="@android:style/Widget.EditText">
 		<item name="android:textSize">20sp</item>
 		<item name="android:textColor">#FFFFFFFF</item>
 		<item name="android:typeface">monospace</item>
@@ -39,7 +39,7 @@
 		<!--<item name="android:background">#17FFFFFF</item>-->
 	</style>
 	
-	<style name="textSpinner" parent="@android:Widget.Spinner">
+	<style name="textSpinner" parent="@android:style/Widget.Spinner">
 		<item name="android:textSize">20sp</item>
 		<item name="android:textColor">#FFFFFFFF</item>
 		<item name="android:typeface">monospace</item>
