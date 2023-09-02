@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item
+		android:id="@+id/menu_profile_load"
+		android:title="@string/str_load" />
+	<item
+		android:id="@+id/menu_profile_rename"
+		android:title="@string/str_rename" /> 
+	<item
+		android:id="@+id/menu_profile_delete"
+		android:title="@string/str_delete" /> 
+</menu>
