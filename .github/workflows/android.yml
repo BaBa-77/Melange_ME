@@ -35,5 +35,5 @@ jobs:
     - name: Upload APK
       uses: actions/upload-artifact@v2
       with:
-       name: app-release
-       path: apk/ # Sesuaikan dengan path ke APK Anda
+       name: app-release.apk
+       path: apk/app.apk # Sesuaikan dengan path ke APK Anda
