@@ -1,0 +1,6 @@
+<resources>
+    <string-array name="opt_scale">
+        <item>Ukuran asli</item>
+        <item>Paskan ke layar</item>
+    </string-array>
+</resources>
