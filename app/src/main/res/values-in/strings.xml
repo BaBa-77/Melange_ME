@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+	
+	<!--konfigurasi-->
+	<string name="start_emulator">Mulai emulator</string>
+	<string name="save">Simpan</string>
+	<string name="saved">Tersimpan</string>
+	<string name="configurate">Konfigurasi</string>
+	<string name="general">Umum</string>
+	<string name="library">Pustaka</string>
+	<string name="rotation">Rotasi</string>
+	<string name="fullscreen">Layar Penuh</string>
+	<string name="info_fullscreen">Ketinggian tampilan akan berubah, posisi vertikal item akan terlihat tidak benar setelah merubah(on/off) ini</string>
+	<string name="action_bar">Action Bar</string>
+	<string name="skip_this">Lewati ini (menu konfigurasi)</string>
+	<string name="bg_color">Warna latar belakang</string>
+	<string name="ext_bg">Eksternal latar belakang</string>
+	<string name="info_ext_bg">⚠️ Letakkan gambar di \'/sdcard/MelangeBREW/sys/bg.png\'</string>
+	<string name="monitor">Monitor</string>
+	<string name="resolution">Resolusi</string>
+	<string name="scale_percent">Skala (%)</string>
+	<string name="info_scale">⚠️ Jangan mengatur terlalu tinggi</string>
+	<string name="keypad">Keypad</string>
+	<string name="label_size">Ukuran label</string>
+	<string name="label_color">Warna label</string>
+	<string name="margin_top">Margin atas</string>
+	<string name="margin_bottom">Margin bawah</string>
+	<string name="margin_right">Margin kanan</string>
+	<string name="margin_left">Margin kiri</string>
+	<string name="btn_diagonal">Tombol diagonal [Eksperimen]</string>
+	<string name="info_btn_diagonal">⚠️ Hanya tersedia pada mode rebah/landscape. Mungkin berdampak pada kecepatan respon dari keseluruhan tombol \'Dpad\'</string>
+	<string name="ext_bg_label">Eksternal background label</string>
+	<string name="info_ext_bg_label">⚠️ Letakkan gambar di \'/sdcard/MelangeBREW/sys/bgBtn.png\'</string>
+	<string name="ext_label">Eksternal label-kode [Eksperimen]</string>
+	<string name="info_ext_label">"⚠️ Lihat dan ubah di \'/sdcard/MelangeBREW/sys/keypad/keypad_*.txt\'</string>
+	<string name="info_configurate">Mulai emulator untuk menyimpan konfigurasi</string>
+
+	<!--pilihan libarary-->
+	<string-array name="lib_name">
+		<item>v1.1.0</item>
+		<item>v1.1.0a (Beta) [lawas]</item>
+	</string-array>
+
+	<!--pilihan orientasi-->
+	<string-array name="orientation_name">
+		<item>Tegak</item>
+		<item>Rebah</item>
+	</string-array>
+
+	<!-- menu action bar -->
+	<string name="str_screenshot">Ambil Gambar</string>
+	<string name="str_sett">Pengaturan</string>
+	<string name="str_exit">Keluar Aplikasi</string>
+	<string name="str_backEmu">Kembali ke emulator</string>
+	<string name="str_stop">Main Menu Emulator</string>
+	<string name="str_custom">Kustomisasi</string>
+	<string name="str_custom_off">Berhenti Kustomisasi > Simpan</string>
+	<string name="str_custom_move">Atur posisi</string>
+	<string name="str_custom_size">Atur ukuran</string>
+	<string name="str_custom_alphaKeypad">Atur transparasi tombol</string>
+
+	<string name="dialog_exit_title">Keluar ?</string>
+	<string name="dialig_exit_msg">Semua data yang belum disimpan akan hilang!</string>
+	<string name="dialog_exit_btn_positive">Ya, keluar</string>
+	<string name="dialog_exit_btn_negative">Batal</string>
+	<string name="dialog_exit_btn_neutral">Simpan > Keluar</string>
+
+	<string name="dialog_sett_title">Masuk pengaturan ?</string>
+	<string name="dialig_sett_msg">Semua data yang belum disimpan akan hilang, tutup emulator?</string>
+	<string name="dialog_sett_btn_positive">Ya, buka pengaturan</string>
+	<string name="dialog_sett_btn_negative">Batal</string>
+
+	<string name="dialog_stop_title">Pergi ke Main Menu ?</string>
+	<string name="dialig_stop_msg">Semua data yang belum disimpan akan hilang, pergi ke Main Menu?</string>
+	<string name="dialog_stop_btn_positive">Ya</string>
+	<string name="dialog_stop_btn_negative">Batal</string>
+
+</resources>
