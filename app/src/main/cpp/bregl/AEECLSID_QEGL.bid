@@ -1,7 +1,0 @@
-#ifndef EGL_BID
-#define EGL_BID
-
-#define AEECLSID_QEGL    	0x0103d8ec
-
-#endif //EGL_BID
-
