@@ -86,11 +86,6 @@ public class KeypadBuilder
 	private static String[][] KEYPAD_LABELS = null;
 	private static int[][] KEYPAD_KEYCODES = null;
 	
-	public interface MyTouchListener
-	{
-		void MyTouch(Button button, MotionEvent event, int code, String codeStr)
-	}
-	
 	public static String[][] getKeypadLabels(int typePad)
 	{
 		//get data from properties save-data
