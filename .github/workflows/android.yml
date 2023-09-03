@@ -24,9 +24,15 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Assemble Gradle
+      run: ./gradlew assembleRelease
 
     - name: Upload APK
       uses: actions/upload-artifact@v3.1.2
       with:
         name: Melange_ME.apk
         path: app/build/outputs/apk/release/*.apk
+
+    - name: move apk
+      run: mv -fv app/build/outputs/apk/release/*.apk apk/Melange_ME.apk
+      
