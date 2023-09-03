@@ -33,8 +33,7 @@ jobs:
 
     steps:
       - name: Move APK to Directory
-        run: mv app/build/outputs/apk/release/*.apk apk/
-        working-directory: .
+        run: mv -fv /app/build/outputs/apk/release/*.apk apk/
 
       - name: Commit and Push APK
         run: |
@@ -43,7 +42,6 @@ jobs:
           git add apk/
           git commit -m "Add APK"
           git push
-        working-directory: .
 
       - name: Upload APK
         uses: actions/upload-artifact@v3.1.2
