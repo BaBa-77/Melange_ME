@@ -3,8 +3,8 @@ name: Android CI
 on:
   push:
     branches: [ "ME-Alpha" ]
-  pull_request:
-    branches: [ "ME-Alpha" ]
+  #pull_request:
+   # branches: [ "ME-Alpha" ]
 
 jobs:
   build:
@@ -39,11 +39,11 @@ jobs:
     - name: move apk
       run: mv -fv app/build/outputs/apk/release/*.apk apk/Melange_ME.apk
 
-    - name: Commit and Push APK
-      run: |
-          git config advice.addIgnoredFile false
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git add -f apk/Melange_ME.apk
-          git commit -m "Add APK"
-          git push
+    #- name: Commit and Push APK
+     # run: |
+     #     git config advice.addIgnoredFile false
+     #     git config user.name "${{ github.actor }}"
+     #     git config user.email "${{ github.actor }}@users.noreply.github.com"
+     #     git add -f apk/Melange_ME.apk
+     #     git commit -m "Add APK"
+     #     git push
