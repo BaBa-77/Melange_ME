@@ -1,11 +1,11 @@
 name: Android CI
 
 on:
-  #workflow_dispatch:
-  push:
-    branches: [ "patch-1" ]
-  pull_request:
-    branches: [ "patch-1" ]
+  workflow_dispatch:
+  #push:
+    #branches: [ "patch-1" ]
+  #pull_request:
+    #branches: [ "patch-1" ]
 
 jobs:
   build:
