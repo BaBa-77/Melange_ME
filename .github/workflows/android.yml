@@ -31,4 +31,15 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
           name: Melange_ME.apk
-          path: app/build/outputs/apk/*apk
+          path: app/build/outputs/apk/release/*apk
+
+    - name: move apk
+      run: mv -fv app/build/outputs/apk/release/Melange_ME.apk apk/Melange_ME.apk
+
+    - name: Commit and Push APK
+      run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add apk/Melange_ME.apk
+          git commit -m "Add APK"
+          git push
