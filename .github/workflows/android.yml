@@ -38,8 +38,9 @@ jobs:
 
     - name: Commit and Push APK
       run: |
+          git config advice.addIgnoredFile false
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git add apk/Melange_ME.apk
+          git add -f apk/Melange_ME.apk
           git commit -m "Add APK"
           git push
