@@ -33,6 +33,9 @@ jobs:
           name: Melange_ME.apk
           path: app/build/outputs/apk/release/*apk
 
+    - name: check
+      run: ls -1 app/
+
     - name: move apk
       run: mv -fv app/build/outputs/apk/release/*.apk apk/Melange_ME.apk
 
