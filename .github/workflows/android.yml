@@ -26,25 +26,9 @@ jobs:
       run: ./gradlew build
     - name: Assemble Gradle
       run: ./gradlew assembleRelease
-
-  post-build:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Move APK to Directory
-        run: mv -fv /app/build/outputs/apk/release/*.apk apk/
-
-      - name: Commit and Push APK
-        run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git add apk/
-          git commit -m "Add APK"
-          git push
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: app-release
-          path: apk/
+      
+    - name: Upload APK
+      uses: actions/upload-artifact@v3.1.2
+      with:
+          name: Melange_ME.apk
+          path: app/build/outputs/apk/*apk
