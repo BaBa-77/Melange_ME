@@ -1,11 +1,11 @@
 name: Android CI
 
 on:
-  workflow_dispatch:
-  #push:
-   # branches: [ "ME-Alpha" ]
-  #pull_request:
-   # branches: [ "ME-Alpha" ]
+  #workflow_dispatch:
+  push:
+    branches: [ "patch-1" ]
+  pull_request:
+    branches: [ "patch-1" ]
 
 jobs:
   build:
@@ -33,9 +33,6 @@ jobs:
       with:
           name: Melange_ME.apk
           path: app/build/outputs/apk/release/*apk
-
-    - name: check
-      run: ls -1 app/
 
     - name: move apk
       run: mv -fv app/build/outputs/apk/release/*.apk apk/Melange_ME.apk
