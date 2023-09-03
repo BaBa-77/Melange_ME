@@ -1,8 +1,9 @@
 name: Android CI
 
 on:
-  push:
-    branches: [ "ME-Alpha" ]
+  workflow_dispatch:
+  #push:
+   # branches: [ "ME-Alpha" ]
   #pull_request:
    # branches: [ "ME-Alpha" ]
 
