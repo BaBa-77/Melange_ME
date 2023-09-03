@@ -26,9 +26,7 @@ jobs:
       run: ./gradlew build
 
     - name: Upload APK
-      #run: mkdir apk/
       uses: actions/upload-artifact@v3.1.2
       with:
         name: Melange_ME.apk
-        run: mkdir apk/
-        path: apk/*.apk
+        path: app/build/outputs/apk/release/*.apk
